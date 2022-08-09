@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const QuizModel = new Schema(
+const CustomQuizModel = new Schema(
   {
     questions: {
       type: Array,
@@ -42,14 +42,8 @@ const QuizModel = new Schema(
       type: Schema.Types.ObjectId,
       required: false,
     },
-    custom: {
-      type: Boolean,
-      default: false,
-    },
   },
   {
     timestamps: true,
   },
 );
-
-module.exports = model('Quiz', QuizModel);

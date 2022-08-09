@@ -1,24 +1,24 @@
 const { Schema, model } = require('mongoose');
 
-const QuestionModel = new Schema(
+const CustomQuestionAnswerModel = new Schema(
   {
     quiz: {
       type: Schema.Types.ObjectId,
       required: true,
     },
-    date: {
-      type: String,
+    user: {
+      type: Schema.Types.ObjectId,
       required: true,
     },
-    number: {
-      type: Number,
+    answers: {
+      type: Array,
       required: true,
     },
-    text: {
-      type: String,
+    template: {
+      type: Schema.Types.ObjectId,
       required: true,
     },
-    questionTemplate: {
+    quizCollection: {
       type: Schema.Types.ObjectId,
       required: true,
     },
@@ -28,4 +28,4 @@ const QuestionModel = new Schema(
   },
 );
 
-module.exports = model('Question', QuestionModel);
+module.exports = model('CustomQuestionAnswerModel', CustomQuestionAnswerModel);
